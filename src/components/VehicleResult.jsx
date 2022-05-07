@@ -1,7 +1,7 @@
 import React from "react";
 
 const VehicleResult = ({vehicle}) => {
-    const {plate, brand, model, version, year, color, visit, house, enabled} = vehicle
+    const {plate, brand, model, version, year, color, visit, house} = vehicle
   return (
     <div>
         <p>Patente: {plate}</p>
