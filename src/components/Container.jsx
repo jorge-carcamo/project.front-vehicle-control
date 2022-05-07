@@ -1,20 +1,35 @@
 import React from "react";
 import VechileResult from "./VehicleResult";
-import useFetch from "../hooks/useFecth";
+import useVehicle from "../hooks/useVehicle";
 
 const Container = () => {
-    const { data, setData } = useFetch();
+  const { data, setData } = useVehicle();
+  const toInputUppercase = (e) => {
+    e.target.value = ("" + e.target.value).toUpperCase();
+  };
+
+  const handleOnChange = (e) => {
+    //if (e.target.value.length === 6) {
+    setData({ ...data, plate: e.target.value });
+    //
+  };
   return (
     <main>
       <input
         type="text"
+        maxLength={6}
         placeholder="Ingrese una patente"
         value={data.plate}
-        onChange={(e) => setData({ ...data, plate: e.target.value })}
+        onChange={handleOnChange}
+        onInput={toInputUppercase}
       />
       <br />
-      {console.log(data.results)}
-      {data.results ? <VechileResult vehicle={data.results}/> : <p>No existe</p>}
+
+      {data.results ? (
+        <VechileResult vehicle={data.results} />
+      ) : (
+        <p>No existe</p>
+      )}
     </main>
   );
 };

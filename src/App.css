@@ -1,0 +1,27 @@
+html {
+  background: rgb(75, 158, 72);
+  height: 100%;
+  display: flex;
+}
+body {
+  width: 100%;
+  margin: auto;
+}
+
+input {
+  background: rgb(156, 210, 218);
+  text-align: center;
+  border-radius: 10px;
+  border: 2px;
+  font-size: x-large;
+}
+
+p {
+  font-size: x-large;
+  text-align: center;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
