@@ -22,6 +22,7 @@ const useFecth = () => {
       }, 1000);
       return () => clearTimeout(timeoutId);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.plate]);
 
   return { data, setData };
